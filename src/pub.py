@@ -6,13 +6,17 @@ class Pub:
         self.drinks = []
 
     def add_drink(self, drink):
-        self.drinks.append(drink.name)
+        self.drinks.append(drink)
 
-    def sell_drink(self):
-        pass
+    def sell_drink(self, drink):
+        self.remove_drink(drink)
+        self.increase_till(drink)
 
-    def remove_drink(self):
-        pass
+    def remove_drink(self, drink):
+        self.drinks.remove(drink)
 
-    def increase_till(self):
-        pass
+    def increase_till(self, drink):
+        self.till += drink.price
+
+    def count_drinks(self):
+        return len(self.drinks)

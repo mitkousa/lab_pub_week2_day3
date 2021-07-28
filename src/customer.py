@@ -17,5 +17,10 @@ class Customer:
     def reduce_wallet(self, drink):
         self.wallet -= drink.price
 
-    def buy_drink(self):
-        pass
+    def buy_drink(self, drink):
+        if self.can_afford_drink == True:
+            self.add.drink(self.drinks)
+            self.reduce.wallet(drink.price)
+
+    def count_drinks(self):
+        return len(self.drinks)
